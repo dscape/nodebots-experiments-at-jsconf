@@ -29,3 +29,8 @@ var board = new firmata.Board('/dev/tty.usbmodemfa131', function(err) {
   }, 1000);
 
 });
+
+process.on('SIGINT', function () {
+  board.digitalWrite(ledPin, board.LOW);
+  process.exit();
+});
