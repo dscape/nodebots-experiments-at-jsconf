@@ -4,8 +4,6 @@ var sensor  = 0
   , led     = 13
   , blinkin = false
 
-console.log('(-)(+)')
-
 function blink(reading) {
   if(blinkin) return
   board.digitalWrite(led, board.HIGH)
@@ -22,7 +20,7 @@ function blink(reading) {
 var board = new firmata.Board('/dev/tty.usbmodemfa131', function(err) {
   if (err) throw err
 
-  console.log('> connected')
+  console.log('(-)(+)')
   board.pinMode(led, board.MODES.OUTPUT)
 
   board.analogRead(sensor, blink)
