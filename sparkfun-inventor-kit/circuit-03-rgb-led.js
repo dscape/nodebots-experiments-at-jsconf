@@ -4,6 +4,7 @@ var five = require("johnny-five"),
 board = new five.Board();
 
 board.on("ready", function() {
+  console.log('(-)(+)')
 
   red = new five.Led(9);
   green = new five.Led(10);
